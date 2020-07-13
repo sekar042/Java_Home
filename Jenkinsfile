@@ -3,14 +3,12 @@ pipeline {
     tools {
         maven 'maven3'
     }
-    stages {
+    stages{
         stage('Build'){
             steps{
-                sh label: '', script: 'mvn clean package'
+                sh script: 'mvn clean package'
             }
-
         }
-        stages {
         stage('Upload war file into nexus'){
             steps{
                 nexusArtifactUploader artifacts: [
@@ -29,7 +27,6 @@ pipeline {
                 repository: 'http://52.14.160.207:8081/repository/simpleapp-release/', 
                 version: '1.0.0'
             }
-
         }
     }
 }
