@@ -6,10 +6,10 @@ pipeline {
     stages{
         stage('Build'){
             steps{
-                 sh script: 'mvn clean package'
-                 }
+                sh script: 'mvn clean package'
+            }
         }
-        stage('Upload War To Nexus'){
+        stage('Upload war file into nexus'){
             steps{
                 script{
                     def mavenPom = readMavenPom file: 'pom.xml'
@@ -29,6 +29,7 @@ pipeline {
                     repository: 'simpleapp-release', 
                     version: "${mavenPom.version}"
                     }
+                
             }
         }
     }
