@@ -1,1 +1,11 @@
-
+pipeline{
+    agent any
+    stages{
+        stage("Git Checkout"){
+            steps{
+                git credentialsId: 'sekar042', url: 'https://github.com/sekar042/Java_Home.git'
+            }
+            
+        }
+    }
+}
