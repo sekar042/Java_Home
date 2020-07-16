@@ -19,6 +19,12 @@ pipeline{
                 
              }
         }
+        stage("sonar scaner"){
+            steps{
+                mvn sonar:sonar -Dsonar.projectKey=Java_Home -Dsonar.host.url=http://18.217.232.248:9000 -Dsonar.login=5d212b12c2a92fad0541444d1c5a379b9e5542cf
+                
+             }
+        }
         stage("Deploy-to tomcat"){
             steps{
                 sshagent(['tomcat']) {
