@@ -15,7 +15,7 @@ pipeline{
             steps{
                 sh "mvn clean package"
                 sh "mv target/*.war target/myweb.war"
-                cucumber failedFeaturesNumber: -1, failedScenariosNumber: -1, failedStepsNumber: -1, fileIncludePattern: '**/*.json', pendingStepsNumber: -1, skippedStepsNumber: -1, sortingMethod: 'ALPHABETICAL', undefinedStepsNumber: -1
+                
              }
         }
         stage("Deploy-to tomcat"){
