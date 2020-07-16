@@ -17,7 +17,7 @@ pipeline{
                 sh "mv target/*.war target/myweb.war"
                 mvn sonar:sonar \
                      -Dsonar.projectKey=Java_Home \
-                     -Dsonar.host.url=http://18.217.232.248:9000 \
+                     -Dsonar.host.url=http://172.31.3.163:9000 \
                      -Dsonar.login=5d212b12c2a92fad0541444d1c5a379b9e5542cf
                 cucumber failedFeaturesNumber: -1, failedScenariosNumber: -1, failedStepsNumber: -1, fileIncludePattern: '**/*.json', pendingStepsNumber: -1, skippedStepsNumber: -1, sortingMethod: 'ALPHABETICAL', undefinedStepsNumber: -1
                 
